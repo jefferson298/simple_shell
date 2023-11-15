@@ -47,4 +47,11 @@ int _cloz(info_t *);
 int _vec(info_t *);
 int _recov(info_t *);
 
+/* constructi.c */
+int _valin(info_t *);
+int _altern(info_t *);
+int print_altern(list_t *node);
+int unset_altern(info_t *info, char *str);
+int set_altern(inifo_t *info, char *str);
+
 #endif
