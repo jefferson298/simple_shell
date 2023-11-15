@@ -132,7 +132,7 @@ int set_altern(info_t *info, char *str);
 /* _compound.c */
 char *_getenv(info_t *, const char *);
 int _comp(info_t *);
-int _setcomp(info_t *);
+int _mysetenv(info_t *);
 int _rmcomp(info_t *);
 int _incrementlist(info_t *);
 

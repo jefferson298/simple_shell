@@ -35,19 +35,19 @@ char *_getenv(info_t *info, const char *name)
 }
 
 /**
- * _setcomp - Initialize a new environment variable.
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
+ * _mysetenv - This Initialize a new environment variable.
+ * @info: containing potential argument.
  *  Return: 0 (success)
+ *
  */
-int _setcomp(info_t *info)
+int _mysetenv(info_t *info)
 {
 	if (info->argc != 3)
 	{
 		_eputs("Incorrect number of arguements\n");
 		return (1);
 	}
-	if (_setcomp(info, info->argv[1], info->argv[2]))
+	if (_setenv(info, info->argv[1], info->argv[2]))
 		return (0);
 	return (1);
 }
