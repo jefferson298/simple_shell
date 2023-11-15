@@ -149,4 +149,38 @@ int call_d(int, int);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
 
+/* halt.c */
+char *_strncpy(char *, char *, int);
+char *_strncat(char *, char *, int);
+char *_strchr(char *, char);
+
+/* pull_line.c */
+ssize_t get_input(info_t *);
+int _pullline(info_t *, char **, size_t *);
+void sigintHandler(int);
+
+/* repenv.c */
+char **get_environ(info_t *);
+int _unsetenv(info_t *, char *);
+int _setenv(info_t *, char *, char *);
+
+/* repinfo.c */
+void clear_info(info_t *);
+void set_info(info_t *, char **);
+void free_info(info_t *, int);
+
+/* records.c */
+char *get_history_file(info_t *info);
+int crt_records(info_t *info);
+int call_records(info_t *info);
+int pull_records_list(info_t *info, char *buf, int linecount);
+int makeover_records(info_t *info);
+
+/* listup.c */
+list_t *add_node(list_t **, const char *, int);
+list_t *add_node_end(list_t **, const char *, int);
+size_t print_list_str(const list_t *);
+int delete_node_at_index(list_t **, unsigned int);
+void free_list(list_t **);
+
 #endif
