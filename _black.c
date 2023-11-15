@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * gem - returns true if shell is interactive mode
@@ -6,7 +6,7 @@
  *
  * Return: 1 if black  mode, 0 otherwise
  */
-int black(info_t *info)
+int gem(info_t *info)
 {
 	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }

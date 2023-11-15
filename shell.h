@@ -1,5 +1,5 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _SHELL_H_
+#define _SHELL_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -52,6 +52,26 @@ int _valin(info_t *);
 int _altern(info_t *);
 int print_altern(list_t *node);
 int unset_altern(info_t *info, char *str);
-int set_altern(inifo_t *info, char *str);
+int set_altern(info_t *info, char *str);
+
+/* _compound.c */
+char *_getenv(info_t *, const char *);
+int _comp(info_t *);
+int _setcomp(info_t *);
+int _rmcomp(info_t *);
+int _incrementlist(info_t *);
+
+/* mistakes.c */
+void _eputs(char *);
+int _eputchar(char);
+int _putfd(char c, int fd);
+int _putsfd(char *str, int fd);
+
+/* mistakesi.c */
+int _mist(char *);
+void print_error(info_t *, char *);
+int call_d(int, int);
+char *convert_number(long int, int, int);
+void remove_comments(char *);
 
 #endif

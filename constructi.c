@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * _valin - displays the history list
@@ -42,7 +42,7 @@ int unset_altern(info_t *info, char *str)
  *
  * Return: Always 0 on success, 1 on error
  */
-int set_altern(inifo_t *info, char *str)
+int set_altern(info_t *info, char *str)
 {
 	char *p;
 

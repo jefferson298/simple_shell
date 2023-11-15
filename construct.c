@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * _cloz - This exits the shell
@@ -31,7 +31,7 @@ int _cloz(info_t *info)
 /**
  * _vec - changes the current directory of the process
  * @info: Structure containing potential arguments
- * Return: 0 (success) 
+ * Return: 0 (success)
  */
 int _vec(info_t *info)
 {
