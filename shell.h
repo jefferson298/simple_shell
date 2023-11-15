@@ -196,4 +196,34 @@ char *_memset(char *, char, unsigned int);
 void ffree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 
+/* loop.c */
+int hsh(info_t *, char **);
+int find_builtin(info_t *);
+void find_cmd(info_t *);
+void fork_cmd(info_t *);
+
+
+/* partstring.c */
+int _len(char *);
+int _cmp(char *, char *);
+char *starts_with(const char *, const char *);
+char *_strcat(char *, char *);
+
+/* compstring.c */
+char *_strcpy(char *, char *);
+char *_strdup(const char *);
+void _puts(char *);
+int _putchar(char);
+
+/* token */
+char **strtow(char *, char *);
+char **strtow2(char *, char);
+
+/* excess.c */
+int is_chain(info_t *, char *, size_t *);
+void check_chain(info_t *, char *, size_t *, size_t, size_t);
+int nick(info_t *);
+int nickies(info_t *);
+int val_strings(char **, char *);
+
 #endif
