@@ -50,9 +50,9 @@ int set_altern(info_t *info, char *str)
 	if (!p)
 		return (1);
 	if (!*++p)
-		return (unset_alias(info, str));
+		return (unset_altern(info, str));
 
-	unset_alias(info, str);
+	unset_altern(info, str);
 	return (add_node_end(&(info->alias), str, 0) == NULL);
 }
 
@@ -95,7 +95,7 @@ int _altern(info_t *info)
 		node = info->alias;
 		while (node)
 		{
-			print_alias(node);
+			print_altern(node);
 			node = node->next;
 		}
 		return (0);
@@ -104,9 +104,9 @@ int _altern(info_t *info)
 	{
 		p = _strchr(info->argv[g], '=');
 		if (p)
-			set_alias(info, info->argv[g]);
+			set_altern(info, info->argv[g]);
 		else
-			print_alias(node_starts_with(info->alias, info->argv[g], '='));
+			print_altern(node_starts_with(info->alias, info->argv[g], '='));
 	}
 
 	return (0);

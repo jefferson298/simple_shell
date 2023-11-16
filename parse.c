@@ -25,7 +25,8 @@ int prompt_cmd(info_t *info, char *path)
 /**
  * dup_chars - This function duplicates characters
  * @pathstr: the PATH string given
- * @start: starting index
+ * @start:tHIS is starting index
+ *
  * @stop: stopping index
  *
  * Return: pointer to new buffer
@@ -35,7 +36,7 @@ char *dup_chars(char *pathstr, int start, int stop)
 	static char buf[1024];
 	int g = 0, k = 0;
 
-	for (k = 0, g = start; g < stop; i++)
+	for (k = 0, g = start; g < stop; g++)
 		if (pathstr[g] != ':')
 			buf[k++] = pathstr[g];
 	buf[k] = 0;
@@ -59,7 +60,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 		return (NULL);
 	if ((_strlen(cmd) > 2) && starts_with(cmd, "./"))
 	{
-		if (is_cmd(info, cmd))
+		if (prompt_cmd(info, cmd))
 			return (cmd);
 	}
 	while (1)
@@ -74,7 +75,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 				_strcat(path, "/");
 				_strcat(path, cmd);
 			}
-			if (is_cmd(info, path))
+			if (prompt_cmd(info, path))
 				return (path);
 			if (!pathstr[a])
 				break;

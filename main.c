@@ -2,10 +2,11 @@
 
 /**
  * main - entry point
+ *
  * @ac: arg count
  * @av: arg vector
  *
- * Return: 0 on success, 1 on error
+ * Return: 0 on success else 1
  */
 int main(int ac, char **av)
 {
@@ -37,8 +38,8 @@ int main(int ac, char **av)
 		}
 		info->readfd = fd;
 	}
-	populate_env_list(info);
-	read_history(info);
+	_incrementlist(info);
+	call_records(info);
 	hsh(info, av);
 	return (EXIT_SUCCESS);
 }

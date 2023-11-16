@@ -38,8 +38,8 @@ void set_info(info_t *info, char **av)
 			;
 		info->argc = k;
 
-		replace_alias(info);
-		replace_vars(info);
+		nick(info);
+		nickies(info);
 	}
 }
 
@@ -66,7 +66,7 @@ void free_info(info_t *info, int all)
 			free_list(&(info->alias));
 		ffree(info->environ);
 			info->environ = NULL;
-		bfree((void **)info->cmd_buf);
+		zfree((void **)info->cmd_buf);
 		if (info->readfd > 2)
 			close(info->readfd);
 		_putchar(BUF_FLUSH);

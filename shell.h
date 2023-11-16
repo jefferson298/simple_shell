@@ -17,13 +17,18 @@
 #define CMD_AND		2
 #define CMD_CHAIN	3
 
-/* for value chaining */
+/*  chaining */
 #define CMD_NORM	0
 #define CMD_OR		1
 #define CMD_AND		2
 #define CMD_CHAIN	3
 
-/* for the convert_number() */
+/* buffers */
+#define READ_BUF_SIZE 1024
+#define WRITE_BUF_SIZE 1024
+#define BUF_FLUSH -1
+
+/* convert_number() */
 #define CONVERT_LOWERCASE	1
 #define CONVERT_UNSIGNED	2
 
@@ -143,7 +148,7 @@ int _putfd(char c, int fd);
 int _putsfd(char *str, int fd);
 
 /* mistakesi.c */
-int _mist(char *);
+int _erratoi(char *);
 void print_error(info_t *, char *);
 int call_d(int, int);
 char *convert_number(long int, int, int);
@@ -202,10 +207,16 @@ int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
+/* listup2.c */
+size_t list_len(const list_t *);
+char **list_to_strings(list_t *);
+size_t print_list(const list_t *);
+list_t *node_starts_with(list_t *, char *, char);
+ssize_t get_node_index(list_t *, list_t *);
 
 /* partstring.c */
-int _len(char *);
-int _cmp(char *, char *);
+int _strlen(char *);
+int _strcmp(char *, char *);
 char *starts_with(const char *, const char *);
 char *_strcat(char *, char *);
 

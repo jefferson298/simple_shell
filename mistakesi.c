@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * _mist - This converts a string to an integer
+ * _erratoi - This converts a string to an integer
  * @s: the string to be converted
  * Return: 0 if no numbers in string, converted val else -1
  */
-int _mist(char *s)
+int _erratoi(char *s)
 {
 	int g = 0;
 	unsigned long int result = 0;
@@ -38,7 +38,7 @@ void print_error(info_t *info, char *estr)
 {
 	_eputs(info->fname);
 	_eputs(": ");
-	print_d(info->line_count, STDERR_FILENO);
+	call_d(info->line_count, STDERR_FILENO);
 	_eputs(": ");
 	_eputs(info->argv[0]);
 	_eputs(": ");
