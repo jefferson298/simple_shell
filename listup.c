@@ -99,13 +99,13 @@ size_t print_list_str(const list_t *h)
 }
 
 /**
- * remove_node - deletes node at given index
+ * delete_node_at_index - deletes node at given index
  * @head: address of pointer to first node
  * @index: index of node to delete
  *
- * Return: 1 (success) 0r  0 on failure
+ * Return: 1 (success) else 0
  */
-int remove_node(list_t **head, unsigned int index)
+int delete_node_at_index(list_t **head, unsigned int index)
 {
 	list_t *node, *prev_node;
 	unsigned int a = 0;

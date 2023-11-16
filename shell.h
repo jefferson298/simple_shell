@@ -130,9 +130,6 @@ int _recov(info_t *);
 /* constructi.c */
 int _valin(info_t *);
 int _altern(info_t *);
-int print_altern(list_t *node);
-int unset_altern(info_t *info, char *str);
-int set_altern(info_t *info, char *str);
 
 /* _compound.c */
 char *_getenv(info_t *, const char *);

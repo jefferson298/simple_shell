@@ -143,14 +143,14 @@ int nickies(info_t *info)
 }
 
 /**
- * val_string - This function replaces string
+ * val_strings - This function replaces string
  *
  * @old: The given address of old string
  * @new: new string given
  *
  * Return: 1 (success) else 0
  */
-int val_string(char **old, char *new)
+int val_strings(char **old, char *new)
 {
 	free(*old);
 	*old = new;

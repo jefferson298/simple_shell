@@ -73,12 +73,12 @@ int _rmcomp(info_t *info)
 }
 
 /**
- * incrementlist - populates env linked list
+ * _incrementlist - populates env linked list
  * @info: Structure containing potential arguments. Used to maintain
  *          constant function prototype.
  * Return: 0 (success)
  */
-int incrementlist(info_t *info)
+int _incrementlist(info_t *info)
 {
 	list_t *node = NULL;
 	size_t g;
