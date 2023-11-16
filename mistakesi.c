@@ -88,22 +88,23 @@ int call_d(int input, int fd)
 /**
  * convert_number - converter function, a clone of itoa
  * @num: number
+ *
  * @base: base
  * @flags: argument flags
  *
- * Return: string
+ * Return: string or null
  */
-char *convert_number(long int nums, int base, int flags)
+char *convert_number(long int num, int base, int flags)
 {
 	static char *array;
 	static char buffer[50];
 	char sign = 0;
 	char *ptr;
-	unsigned long n = nums;
+	unsigned long n = num;
 
-	if (!(flags & CONVERT_UNSIGNED) && nums < 0)
+	if (!(flags & CONVERT_UNSIGNED) && num < 0)
 	{
-		n = -nums;
+		n = -num;
 		sign = '-';
 
 	}
